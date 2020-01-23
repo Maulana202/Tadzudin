@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\guru;
 
 class siswaController extends Controller
 {
@@ -14,13 +15,15 @@ class siswaController extends Controller
      */
     public function index()
     {
-        $siswa = DB::table('siswa')->get();
+
+        // $siswa = DB::table('siswa')->get();
+        $siswa  = guru::all();
         return view('siswa', ['siswa' => $siswa ]);
     }
 
     /**
      * Show the form for creating a new resource.
-     *
+     * 
      * @return \Illuminate\Http\Response
      */
     public function create()
