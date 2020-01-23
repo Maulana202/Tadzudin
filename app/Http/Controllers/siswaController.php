@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 
 class siswaController extends Controller
 {
@@ -14,8 +14,8 @@ class siswaController extends Controller
      */
     public function index()
     {
-        // $siswa = DB::table('siswa')->get();
-        return view('siswa', ['nama' => 'siswa']);
+        $siswa = DB::table('siswa')->get();
+        return view('siswa', ['siswa' => $siswa ]);
     }
 
     /**

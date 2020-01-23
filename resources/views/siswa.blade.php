@@ -5,7 +5,7 @@
 @section('container')
 
 <div class="container">
-<h1>Hellow , {{ $nama }}</h1>
+<h1>Hellow , Siswa</h1>
 
 <table class='table'>
 <thead class='thead-dark'>
@@ -19,17 +19,20 @@
 </tr>
 </thead>
 <tbody>
+@foreach($siswa as $siswa)
 <tr>
- <th scope="row">1</th>
- <td>Maulana</td>
- <td>213821421</td>
- <td>Maulana@gmail.com</td>
- <td>Rekayasa Perangkat Lunak</td>
+ <th scope="row"> {{ $loop->iteration }} </th>
+ <td>{{ $siswa->nama }}</td>
+ <td>{{ $siswa->nis }}</td>
+ <td>{{ $siswa->email }}</td>
+ <td>{{ $siswa->jurusan }}</td>
  <td>
  <a href="#" class="badge badge-success">Edit</a>
  <a href="#" class="badge badge-danger">Delet</a>
  </td>
 </tr>
+
+@endforeach
 </tbody>
 </table>
 </div>
